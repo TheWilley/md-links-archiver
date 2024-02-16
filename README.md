@@ -65,6 +65,11 @@ mla(markdown, ['pdf', 'txt']).then(archive => console.log(archive)) // If no for
 */
 ```
 
+## Testing
+```
+npm run test
+```
+
 ## License
 
 [MIT](https://github.com/TheWilley/md-links-archiver/blob/main/LICENSE)
