@@ -1,6 +1,6 @@
 {
   "name": "md-links-archiver",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "parse links within markdown documents and extract content of linked websites",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "prettier": "prettier index.js",
     "fix:prettier": "prettier index.js --write && eslint --fix index.js"
   },
-  "keywords": ["markdown", "parser", "archive"],  
+  "keywords": [
+    "markdown",
+    "parser",
+    "archive"
+  ],
   "author": "TheWilley",
   "license": "MIT",
   "bugs": {
@@ -21,8 +25,7 @@
     "jsdom": "^24.0.0",
     "markdown-link-extractor": "^3.1.0",
     "mhtml2html": "^3.0.0",
-    "puppeteer": "^22.0.0",
-    "slug": "^8.2.3"
+    "puppeteer": "^22.0.0"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
