@@ -1,6 +1,6 @@
 {
   "name": "md-links-archiver",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "parse links within markdown documents and extract content of linked websites",
   "main": "index.js",
   "scripts": {
