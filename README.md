@@ -1,5 +1,5 @@
 # md-links-archiver
-Parse links within markdown documents and extract content of linked website. Supports various formats, including `HTML`, `PDF`, `PNG` and `TXT`.
+Parse links within markdown documents and extract content of linked websites. Supports various formats, including `HTML`, `PDF`, `PNG` and `TXT`.
 
 This tool serves as a safeguard for preserving or "archiving" references that may be at risk of removal or alteration in the future.
 
