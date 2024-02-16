@@ -14,7 +14,7 @@ mla(<markdown>, <['html' | 'pdf' | 'png' | 'txt']>)
 
 ## Example
 ```javascript
-var mla = require('../index')
+var mla = require('md-links-archiver')
 
 const markdown = `[c](https://en.wikipedia.org/wiki/C_(programming_language))
                   [c++](https://en.wikipedia.org/wiki/C%2B%2B)
