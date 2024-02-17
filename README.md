@@ -9,7 +9,7 @@ This tool serves as a safeguard for preserving or "archiving" references that ma
 ## Usage
 Using `mla` here, but can be required as any variable name.
 ```javascript
-mmla(<markdown>, <['html' | 'pdf' | 'png' | 'txt']>) => WebArchive 
+mla(<markdown>, <['html' | 'pdf' | 'png' | 'txt']>)
 ```
 
 * `pdf` and `png`: returns `Buffer`
