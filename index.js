@@ -112,7 +112,7 @@ module.exports = async function(
       throw Error(`Error navigating to ${url}: ${e}`)
     }
 
-    const title = (await puppeteerInstance.page.title())
+    const title = await puppeteerInstance.page.title()
     const archive = new WebArchive(title, url)
 
     // Archive 1 - HTML
@@ -133,20 +133,34 @@ module.exports = async function(
 
     // Archive 2 - PDF
     if (include.includes('pdf')) {
-      archive.pdf = await puppeteerInstance.page.pdf()
+      try {
+        archive.pdf = await puppeteerInstance.page.pdf()
+      } catch (e) {
+        throw Error(`Error fetching PDF from ${url}: ${e}`)
+      }
     }
 
     // Archive 3 - PNG
     if (include.includes('png')) {
-      archive.png = await puppeteerInstance.page.screenshot({ fullPage: true })
+      try {
+        archive.png = await puppeteerInstance.page.screenshot({
+          fullPage: true
+        })
+      } catch (e) {
+        throw Error(`Error fetching PNG from ${url}: ${e}`)
+      }
     }
 
     // Archive 4 - TEXT
     if (include.includes('txt')) {
-      archive.txt = await puppeteerInstance.page.$eval(
-        '*',
-        (element) => element.innerText
-      )
+      try {
+        archive.txt = await puppeteerInstance.page.$eval(
+          '*',
+          (element) => element.innerText
+        )
+      } catch (e) {
+        throw Error(`Error fetching TXT from ${url}: ${e}`)
+      }
     }
 
     archives.push(archive)
