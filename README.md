@@ -9,8 +9,11 @@ This tool serves as a safeguard for preserving or "archiving" references that ma
 ## Usage
 Using `mla` here, but can be required as any variable name.
 ```javascript
-mla(<markdown>, <['html' | 'pdf' | 'png' | 'txt']>)
+mmla(<markdown>, <['html' | 'pdf' | 'png' | 'txt']>) => WebArchive 
 ```
+
+* `pdf` and `png`: returns `Buffer`
+* `html` and `txt`: retuns `string`
 
 ## Example
 ```javascript
@@ -21,7 +24,7 @@ const markdown = `[c](https://en.wikipedia.org/wiki/C_(programming_language))
                   [c#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
 `
 
-mla(markdown, ['pdf', 'txt']).then(archive => console.log(archive)) // If no formats are defined, all will be used by default
+mla(markdown, ['pdf', 'txt']).then(archive => console.log(archive)) 
 
 
 /*
@@ -35,7 +38,7 @@ mla(markdown, ['pdf', 'txt']).then(archive => console.log(archive)) // If no for
     txt: ...
       'C (pronounced /ˈsiː/ – like the letter c)[6] is a general-purpose computer programming language. 
       It was created in the 1970s by Dennis Ritchie, and remains very widely used and influential.
-      ...,
+      ...
   },
   WebArchive {
     name: 'C++ - Wikipedia',
@@ -58,7 +61,7 @@ mla(markdown, ['pdf', 'txt']).then(archive => console.log(archive)) // If no for
       'C# (/ˌsiː ˈʃɑːrp/ see SHARP)[b] is a general-purpose high-level programming language supporting 
       multiple paradigms. C# encompasses static typing,[16]: 4  strong typing, lexically scoped, 
       imperative, declarative, functional, generic,[16]: 22  object-oriented (class-based), and 
-      component-oriented programming disciplines.[17]\n' +
+      component-oriented programming disciplines.
       ...
   }
 ]

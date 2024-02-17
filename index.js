@@ -112,9 +112,7 @@ module.exports = async function(
       throw Error(`Error navigating to ${url}: ${e}`)
     }
 
-    // Create directory with page name
     const title = (await puppeteerInstance.page.title())
-
     const archive = new WebArchive(title, url)
 
     // Archive 1 - HTML
